@@ -32,6 +32,80 @@ Main reasons to use Kubernetes:
 
 For CKAD, the focus is not on managing the whole cluster. The focus is on designing, deploying, configuring, observing, and troubleshooting applications running on Kubernetes.
 
+## Kubernetes Architecture
+
+```text
+                         User / Developer
+                               |
+                               | kubectl / YAML / API request
+                               v
++---------------------------------------------------------------+
+|                        Control Plane                          |
+|                                                               |
+|  +----------------+      +----------------+                   |
+|  | kube-apiserver |<---->|      etcd      |                   |
+|  +----------------+      +----------------+                   |
+|          ^                                                    |
+|          |                                                    |
+|          v                                                    |
+|  +----------------+      +----------------+                   |
+|  |   scheduler    |      | controller mgr |                   |
+|  +----------------+      +----------------+                   |
+|          |                       |                            |
+|          | decides where         | watches desired state       |
+|          | Pods should run       | and fixes differences       |
++----------|-----------------------|----------------------------+
+           |                       |
+           v                       v
++---------------------------------------------------------------+
+|                         Worker Node 1                         |
+|                                                               |
+|  +----------------+      +----------------+                   |
+|  |    kubelet     |<---->| container      |                   |
+|  |                |      | runtime        |                   |
+|  +----------------+      +----------------+                   |
+|          |                                                    |
+|          v                                                    |
+|  +---------------------------------------------------------+  |
+|  |                         Pods                            |  |
+|  |   +------------+    +------------+    +------------+     |  |
+|  |   | Container  |    | Container  |    | Container  |     |  |
+|  |   +------------+    +------------+    +------------+     |  |
+|  +---------------------------------------------------------+  |
+|                                                               |
+|  +----------------+                                           |
+|  |  kube-proxy    |  handles Service networking               |
+|  +----------------+                                           |
++---------------------------------------------------------------+
+           |
+           | more worker nodes can run more Pods
+           v
++---------------------------------------------------------------+
+|                         Worker Node 2                         |
+|                                                               |
+|  kubelet + container runtime + kube-proxy + Pods              |
++---------------------------------------------------------------+
+
+External traffic
+      |
+      v
++-------------+        +-------------+        +-------------+
+|   Ingress   | -----> |   Service   | -----> |    Pods     |
++-------------+        +-------------+        +-------------+
+```
+
+Key idea:
+
+- The **control plane** makes decisions and stores cluster state.
+- The **worker nodes** run application workloads.
+- The **kube-apiserver** is the main entry point for users and cluster components.
+- **etcd** stores the cluster state.
+- The **scheduler** chooses which node should run a Pod.
+- The **controller manager** watches the cluster and tries to keep the desired state true.
+- The **kubelet** runs on each node and manages Pods on that node.
+- The **container runtime** runs containers.
+- **kube-proxy** helps Services send traffic to the right Pods.
+
 ## Basic Concepts
 
 ### Cluster
