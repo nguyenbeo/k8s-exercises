@@ -41,12 +41,12 @@ Commands to remove created resources.
 
 ## 1. Kubectl Basics
 
-- [ ] Exercise 1.1: Check cluster access
+- [x] Exercise 1.1: Check cluster access
   - Goal: Confirm `kubectl` can communicate with the cluster.
   - Practice: `kubectl cluster-info`, `kubectl get nodes`, `kubectl get namespaces`.
   - Verify: nodes and namespaces are listed.
 
-- [ ] Exercise 1.2: Create and switch namespaces
+- [x] Exercise 1.2: Create and switch namespaces
   - Goal: Practice namespace isolation.
   - Practice: create `ckad`, switch current context namespace, list resources in that namespace.
   - Verify: `kubectl config view --minify` shows the expected namespace.

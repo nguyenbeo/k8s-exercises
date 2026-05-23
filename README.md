@@ -52,8 +52,8 @@ For CKAD, the focus is not on managing the whole cluster. The focus is on design
 |  |   scheduler    |      | controller mgr |                   |
 |  +----------------+      +----------------+                   |
 |          |                       |                            |
-|          | decides where         | watches desired state       |
-|          | Pods should run       | and fixes differences       |
+|          | decides where         | watches desired state      |
+|          | Pods should run       | and fixes differences      |
 +----------|-----------------------|----------------------------+
            |                       |
            v                       v
