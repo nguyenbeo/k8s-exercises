@@ -1,0 +1,5 @@
+Commands:
+- kubectl get namespaces ckad -o wide
+- kubectl get namespaces ckad -o yaml
+- kubectl get namespaces ckad -o json
+- kubectl get namespaces ckad -o jsonpath='{.metadata.name}'
