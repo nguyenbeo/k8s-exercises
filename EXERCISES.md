@@ -51,7 +51,7 @@ Commands to remove created resources.
   - Practice: create `ckad`, switch current context namespace, list resources in that namespace.
   - Verify: `kubectl config view --minify` shows the expected namespace.
 
-- [ ] Exercise 1.3: Use output formats
+- [x] Exercise 1.3: Use output formats
   - Goal: Extract useful information from resources.
   - Practice: `-o wide`, `-o yaml`, `-o json`, `jsonpath`.
   - Verify: print only selected fields from a Pod or Deployment.
