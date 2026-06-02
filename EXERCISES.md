@@ -56,7 +56,7 @@ Commands to remove created resources.
   - Practice: `-o wide`, `-o yaml`, `-o json`, `jsonpath`.
   - Verify: print only selected fields from a Pod or Deployment.
 
-- [ ] Exercise 1.4: Explain Kubernetes resources
+- [x] Exercise 1.4: Explain Kubernetes resources
   - Goal: Learn how to inspect valid fields during the exam.
   - Practice: `kubectl explain pod.spec.containers`, `kubectl explain deployment.spec`.
   - Verify: find the field path for container image, ports, env vars, and probes.

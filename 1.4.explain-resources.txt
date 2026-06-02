@@ -1,0 +1,5 @@
+Commands:
+- kubectl api-resources (Print the supported API resources on the server)
+- kubectl explain namespaces
+- kubectl explain namespaces.status.phase
+- kubectl explain nodes.spec

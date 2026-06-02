@@ -3,3 +3,4 @@ Commands:
 - kubectl get namespaces ckad -o yaml
 - kubectl get namespaces ckad -o json
 - kubectl get namespaces ckad -o jsonpath='{.metadata.name}'
+- kubectl explain nodes.spec.podCIDR
