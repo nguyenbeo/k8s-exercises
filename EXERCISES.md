@@ -63,7 +63,7 @@ Commands to remove created resources.
 
 ## 2. Pods
 
-- [ ] Exercise 2.1: Create a Pod imperatively
+- [x] Exercise 2.1: Create a Pod imperatively
   - Goal: Create a simple Pod quickly.
   - Practice: `kubectl run nginx --image=nginx`.
   - Verify: `kubectl get pods` and `kubectl describe pod nginx`.
