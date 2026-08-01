@@ -68,22 +68,22 @@ Commands to remove created resources.
   - Practice: `kubectl run nginx --image=nginx`.
   - Verify: `kubectl get pods` and `kubectl describe pod nginx`.
 
-- [ ] Exercise 2.2: Generate a Pod manifest
+- [x] Exercise 2.2: Generate a Pod manifest
   - Goal: Create YAML without applying it immediately.
   - Practice: `kubectl run nginx --image=nginx --dry-run=client -o yaml`.
   - Verify: save the manifest and apply it.
 
-- [ ] Exercise 2.3: Run a command inside a Pod
+- [x] Exercise 2.3: Run a command inside a Pod
   - Goal: Use `kubectl exec`.
   - Practice: run shell commands inside a container.
   - Verify: confirm files, processes, or environment variables inside the Pod.
 
-- [ ] Exercise 2.4: View Pod logs
+- [x] Exercise 2.4: View Pod logs
   - Goal: Read application logs.
   - Practice: `kubectl logs`, `kubectl logs -f`.
   - Verify: logs are visible for the target container.
 
-- [ ] Exercise 2.5: Multi-container Pod
+- [x] Exercise 2.5: Multi-container Pod
   - Goal: Understand containers sharing one Pod network namespace.
   - Practice: create a Pod with two containers.
   - Verify: both containers are running in the same Pod.

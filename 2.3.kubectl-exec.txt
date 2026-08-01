@@ -1,0 +1,2 @@
+kubectl exec nginx -- date
+kubectl exec nginx -it -- ls -t /usr
